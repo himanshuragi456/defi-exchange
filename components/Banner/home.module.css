@@ -1,0 +1,7 @@
+.bgImage {
+  background-image: url("../../public/clouds-dark.svg");
+  /* height: 20vh; */
+  width: 100%;
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+}
