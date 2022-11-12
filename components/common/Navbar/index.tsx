@@ -47,11 +47,11 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between w-full xs:w-72">
           <div className="flex">
             <Image
-              src={"/launchpad/images/wenbitLogo.svg"}
+              src={"/images/wenbitLogo.svg"}
               alt="Wenbit Logo"
               width={187}
               height={43}
-              blurDataURL={"/launchpad/images/wenbitLogo.svg"}
+              blurDataURL={"/images/wenbitLogo.svg"}
               placeholder="blur"
             />
           </div>
@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
           </div>
           <a
             href={"/trading/"}
-            className="hidden xs:flex items-center dark:text-white">{`TRADE`}</a>
+            className="hidden xs:flex items-center dark:text-white">{`MASTER`}</a>
         </div>
         <div className="align-center hidden xs:flex">
           <div className="flex align-center border-grey-c1 pt-2">
@@ -80,7 +80,7 @@ const Navbar: React.FC = () => {
           </div>
           <div className="flex align-center p-1 mx-8">
             <Image
-              src={"/launchpad/accounticon.svg"}
+              src={"/accounticon.svg"}
               alt="Wenbit Logo"
               width={20}
               height={20}
@@ -107,7 +107,7 @@ const Navbar: React.FC = () => {
                 </div>
                 <div className="flex align-center p-1 mx-8">
                   <Image
-                    src={"/launchpad/accounticon.svg"}
+                    src={"/accounticon.svg"}
                     alt="Wenbit Logo"
                     width={20}
                     height={20}

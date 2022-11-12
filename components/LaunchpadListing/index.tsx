@@ -68,11 +68,11 @@ const LaunchpadListing: FC<any> = ({ data = [], setFilter, filter }) => {
               return (
                 <div className="border border-blue-e6 rounded mb-8" key={index}>
                   <Image
-                    src={"/launchpad/images/cardimg.svg"}
+                    src={"/images/cardimg.svg"}
                     alt="Wenbit Logo"
                     width={333}
                     height={152}
-                    blurDataURL={"/launchpad/images/cardimg.svg"}
+                    blurDataURL={"/images/cardimg.svg"}
                     placeholder="blur"
                   />
                   <div className="mx-4">

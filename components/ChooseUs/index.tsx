@@ -6,22 +6,22 @@ const ChooseUs: React.FC = () => {
     {
       label: "EXPOSQURE",
       desc: "Get exposure to the millions of Binance users around the world",
-      src: "/launchpad/images/exposure.svg",
+      src: "/images/exposure.svg",
     },
     {
       label: "LIQUDITY",
       desc: `Projects that are launched on Launchpad or Launchpool will be listed and have world-class liquidity in multiple trading pairs.`,
-      src: "/launchpad/images/liquidity.svg",
+      src: "/images/liquidity.svg",
     },
     {
       label: "TOKEN DISTRIBUTION",
       desc: `Your token will immediately be distributed to a large user base that hold your token.`,
-      src: "/launchpad/images/distributed.svg",
+      src: "/images/distributed.svg",
     },
     {
       label: "FUTURE SYNERGY",
       desc: ` Project will receive extensive support and advice even after listing, having access to all areas of the Binance ecosystem.`,
-      src: "/launchpad/images/teamwork.svg",
+      src: "/images/teamwork.svg",
     },
   ];
 

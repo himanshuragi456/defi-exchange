@@ -26,11 +26,11 @@ const LaunchProject: React.FC = () => {
       </div>
       <div className="hidden sm:flex">
         <Image
-          src={"/launchpad/images/coins.svg"}
+          src={"/images/coins.svg"}
           alt="Coins"
           width={297}
           height={252}
-          blurDataURL={"/launchpad/images/coins.svg"}
+          blurDataURL={"/images/coins.svg"}
         />
       </div>
     </div>
