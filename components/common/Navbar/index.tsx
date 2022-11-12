@@ -98,7 +98,7 @@ const Navbar: React.FC = () => {
           } xs:hidden`}>
           <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
             <li className="text-gray-600 hover:text-blue-600">
-              <a href={"/trading/"}>Master</a>
+              <a href={"/trading/"}>{`Master`}</a>
             </li>
             <li className="text-gray-600 hover:text-blue-600">
               <div className="align-center flex pb-4">
