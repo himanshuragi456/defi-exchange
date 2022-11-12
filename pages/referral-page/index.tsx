@@ -25,7 +25,9 @@ const ReferalPage: React.FC = () => {
     <UserLayout>
       <div className="pt-24 md:pt-28 px-4 md:px-20 pb-20 dark:bg-primary bg-white">
         <div className={styles.coverImg}></div>
-        <h1 className="text-4xl text-center pt-8">Refer your friends </h1>
+        <h1 className="text-4xl text-center pt-8">
+          Refer your friends - test commit{" "}
+        </h1>
         <p className="text-center pt-4 border-b pb-4 border-grey-35">
           Invite and friend and get a 3% of ther amount that your friend is
           buying token of your wallet
