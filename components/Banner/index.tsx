@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import styles from "./home.module.css";
+// import styles from "./home.module.css";
 
 const sampleArr = [
   {
     value: "$0",
-    label: "Current Funds locked",
+    label: "Funds locked",
   },
   {
     value: "$ 0",
@@ -24,8 +24,9 @@ const sampleArr = [
 const Banner: React.FC = () => {
   return (
     <div
-      className={`
-      flex flex-col align-center justify-center p-4 py-10 xs:px-8 sm:px-12 md:px-20 lg:px-40  ${styles.bgImage}`}>
+    // className={`
+    // flex flex-col align-center justify-center p-4 py-10 xs:px-8 sm:px-12 md:px-20 lg:px-40  ${styles.bgImage}`}
+    >
       <div className="flex flex-col xs:flex-row justify-center text-center xs:text-left xs:justify-between">
         <div className=" flex flex-col align-center justify-center">
           <h2 className="text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl ">
