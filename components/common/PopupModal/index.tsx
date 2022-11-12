@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 /* eslint-disable @typescript-eslint/no-floating-promises */
-import { useMutation } from "jsonapi-react";
+// import { useMutation } from "jsonapi-react";
 import Router from "next/router";
 import React from "react";
 import NormalButton from "../Button";
@@ -17,29 +17,29 @@ interface Props {
 const PopupModal: React.FC<Props> = ({ showModal, setShowModal, pageData }) => {
   const [Price, setPrice] = React.useState("");
   const [Amount, setAmount] = React.useState("");
-  const [PCurrency, setPCurrency] = React.useState("");
+  // const [PCurrency, setPCurrency] = React.useState("");
 
   const handleBuyNow: Function = (e: any) => {
     e.preventDefault();
-    if (isLoading) return;
-    submitTransaction({
-      ico_stage: {
-        id: pageData?.id,
-      },
-      payment_currency: {
-        id: PCurrency,
-      },
-      amount: parseFloat(Amount)?.toFixed(8),
-    });
+    // if (isLoading) return;
+    // submitTransaction({
+    //   ico_stage: {
+    //     id: pageData?.id,
+    //   },
+    //   payment_currency: {
+    //     id: PCurrency,
+    //   },
+    //   amount: parseFloat(Amount)?.toFixed(8),
+    // });
     Router.push("/referral-page")
       .then(() => setShowModal(false))
       .catch((err) => console.log(err));
   };
 
-  const [submitTransaction, { isLoading }] = useMutation([
-    "ico_transactions",
-    {},
-  ]);
+  // const [submitTransaction, { isLoading }] = useMutation([
+  //   "ico_transactions",
+  //   {},
+  // ]);
 
   return (
     <>
@@ -85,7 +85,7 @@ const PopupModal: React.FC<Props> = ({ showModal, setShowModal, pageData }) => {
                   <div className="flex flex-col w-full">
                     <label className="font-bold">Currency</label>
                     <select
-                      onChange={(e) => setPCurrency(e.target.value)}
+                      // onChange={(e) => setPCurrency(e.target.value)}
                       className="rounded border border-grey-35 bg-white-fa dark:bg-primary py-2 pr-8 pl-2 mt-2 w-full">
                       <option value="">Select Currency</option>
                       {pageData?.payment_currencies?.map(

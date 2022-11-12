@@ -4,7 +4,7 @@
  */
 import Head from "next/head";
 import { ThemeProvider } from "next-themes";
-import { ApiClient, ApiProvider } from "jsonapi-react";
+// import { ApiClient, ApiProvider } from "jsonapi-react";
 
 /**
  *   Required styles import
@@ -12,9 +12,9 @@ import { ApiClient, ApiProvider } from "jsonapi-react";
 
 import "../styles/globals.css";
 import React from "react";
-import { jsonApiUrl, sanctumUrl } from "../api/config";
-import { getCookie } from "../helpers/getCookie";
-import { schema } from "../helpers/schema";
+// import { jsonApiUrl, sanctumUrl } from "../api/config";
+// import { getCookie } from "../helpers/getCookie";
+// import { schema } from "../helpers/schema";
 
 interface CustomPageProps {
   // <--- your custom page props
@@ -23,50 +23,50 @@ interface CustomPageProps {
   pageProps: any;
 }
 
-const client = new ApiClient({
-  url: jsonApiUrl(),
-  // @ts-expect-error
-  fetch: async function (url, options) {
-    // @ts-expect-error
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-    if (!options?.method) {
-      return await fetch(url, {
-        ...options,
-        credentials: "same-origin",
-        headers: {
-          // @ts-expect-error
-          ...options?.headers,
-          "X-XSRF-TOKEN": getCookie("XSRF-TOKEN"),
-        },
-      });
-    }
-    // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-    return await fetch(sanctumUrl() + "/csrf-cookie", {
-      method: "GET",
-      credentials: "same-origin",
-      headers: {
-        // @ts-expect-error
-        ...options?.headers,
-        "X-XSRF-TOKEN": getCookie("XSRF-TOKEN"),
-      },
-    })
-      .then(async (response) => {
-        return await fetch(url, {
-          ...options,
-          credentials: "same-origin",
-          headers: {
-            // @ts-expect-error
-            ...options.headers,
-            "X-XSRF-TOKEN": getCookie("XSRF-TOKEN"),
-          },
-        });
-      })
-      .catch((error) => {
-        console.log("Error while fetching CSRF token!", error);
-      });
-  },
-  schema,
-});
+// const client = new ApiClient({
+//   url: jsonApiUrl(),
+//   // @ts-expect-error
+//   fetch: async function (url, options) {
+//     // @ts-expect-error
+//     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+//     if (!options?.method) {
+//       return await fetch(url, {
+//         ...options,
+//         credentials: "same-origin",
+//         headers: {
+//           // @ts-expect-error
+//           ...options?.headers,
+//           "X-XSRF-TOKEN": getCookie("XSRF-TOKEN"),
+//         },
+//       });
+//     }
+//     // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+//     return await fetch(sanctumUrl() + "/csrf-cookie", {
+//       method: "GET",
+//       credentials: "same-origin",
+//       headers: {
+//         // @ts-expect-error
+//         ...options?.headers,
+//         "X-XSRF-TOKEN": getCookie("XSRF-TOKEN"),
+//       },
+//     })
+//       .then(async (response) => {
+//         return await fetch(url, {
+//           ...options,
+//           credentials: "same-origin",
+//           headers: {
+//             // @ts-expect-error
+//             ...options.headers,
+//             "X-XSRF-TOKEN": getCookie("XSRF-TOKEN"),
+//           },
+//         });
+//       })
+//       .catch((error) => {
+//         console.log("Error while fetching CSRF token!", error);
+//       });
+//   },
+//   schema,
+// });
 
 const MyApp: React.FC<CustomPageProps> = ({ Component, pageProps }) => {
   /**
@@ -83,11 +83,11 @@ const MyApp: React.FC<CustomPageProps> = ({ Component, pageProps }) => {
         <meta name="theme-color" content="#fff" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
       </Head>
-      <ApiProvider client={client}>
-        <ThemeProvider enableSystem={true} attribute="class">
-          <Component {...pageProps} />
-        </ThemeProvider>
-      </ApiProvider>
+      {/* <ApiProvider client={client}> */}
+      <ThemeProvider enableSystem={true} attribute="class">
+        <Component {...pageProps} />
+      </ThemeProvider>
+      {/* </ApiProvider> */}
     </>
   );
 };

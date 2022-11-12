@@ -7,10 +7,10 @@ import styles from "../../styles/detailspage.module.css";
 import UserLayout from "../../layout/userLayout";
 import NormalButton from "../../components/common/Button";
 import PopupModal from "../../components/common/PopupModal";
-import { useRouter } from "next/router";
-import { useQuery } from "jsonapi-react";
+// import { useRouter } from "next/router";
+// import { useQuery } from "jsonapi-react";
 import Countdown from "../../components/common/Countdown";
-import ReactHtmlParser from "react-html-parser";
+// import ReactHtmlParser from "react-html-parser";
 
 const DetailsPage: React.FC = () => {
   const sampleBtns = [
@@ -21,25 +21,25 @@ const DetailsPage: React.FC = () => {
     "FAQ's",
   ];
 
-  const router = useRouter();
+  // const router = useRouter();
 
-  const ID = router.query.id;
+  // const ID = router.query.id;
 
-  const { data: pageDataIco }: any = useQuery([
-    "public/icos",
-    ID,
-    {
-      include: [
-        "next_stage",
-        "ico_stages",
-        "current_stage",
-        "currency",
-        "payment_currencies",
-      ],
-    },
-  ]);
+  // const { data: pageDataIco }: any = useQuery([
+  //   "public/icos",
+  //   ID,
+  //   {
+  //     include: [
+  //       "next_stage",
+  //       "ico_stages",
+  //       "current_stage",
+  //       "currency",
+  //       "payment_currencies",
+  //     ],
+  //   },
+  // ]);
 
-  const pageData = pageDataIco?.[0];
+  const pageData: any = {};
 
   console.log(pageData, "page data");
 
@@ -153,7 +153,7 @@ const DetailsPage: React.FC = () => {
                       <h2 className="mt-4 font-semibold">
                         {item?.attributes?.name}
                       </h2>
-                      {ReactHtmlParser(item?.attributes?.details)}
+                      {/* {ReactHtmlParser(item?.attributes?.details)} */}
                     </>
                   )
                 )}
