@@ -1,0 +1,394 @@
+@import "assets/css/light.scss";
+@import "assets/css/dark.scss";
+@import "assets/css/product-menu";
+
+.trading-page {
+    position: relative;
+    min-height: calc(107.5vh - 50px);
+    //min-height: 600px;
+    padding: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    flex: 1 0 auto;
+    width: 100%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: var(--main-bg);
+    .left {
+        // display: -webkit-box;
+        // display: -ms-flexbox;
+        // display: flex;
+        // -webkit-box-flex: 1;
+        // flex: 1 0 auto;
+        // flex-direction: column;
+        margin: 5px;
+        margin-top: 0;
+        width: 0;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        // -ms-flex-direction: column;
+        //min-width: 600px;
+        .trading-chart-parent {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin-bottom: 4px;
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            -ms-flex-negative: 0;
+            flex-shrink: 0;
+            height: calc(47% - 0.5rem);
+            border: 1px solid var(--header-border);
+            .base-tab-panel {
+                width: 100%;
+            }
+        }
+        .openorders-parent {
+            height: 100%;
+            width: 100%;
+
+            .accordion {
+                .content.active {
+                    min-height: 210px;
+                }
+                background-color: var(--main-bg);
+            }
+            .base-table-container {
+                max-height: 210px;
+                overflow-y: auto;
+            }
+        }
+    }
+    .right {
+        // -ms-flex-negative: 0;
+        // flex-shrink: 0;
+        //margin-top: 4px;
+        margin-bottom: 4px;
+        // display: -webkit-box;
+        // display: -ms-flexbox;
+        // display: flex;
+        // flex-direction: column;
+        //height: calc(100% - 8px);
+        // -webkit-box-orient: vertical;
+        // -webkit-box-direction: normal;
+        // -ms-flex-direction: column;
+        & > div {
+            margin-bottom: 4px;
+            border: 1px solid var(--header-border);
+        }
+        .obtc-parent {
+            z-index: 1;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            overflow: hidden;
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            -ms-flex-negative: 0;
+            flex-shrink: 0;
+            & > div {
+                height: 100%;
+                width: 100%;
+                right: 0;
+                position: absolute;
+            }
+        }
+        .ordercomponent-parent {
+            z-index: 1;
+        }
+    }
+}
+
+.parent-trading-header-selector-list-container-open {
+    // .base-table__body tr:nth-child(even),
+    // .base-table,
+    // .base-table thead th {
+    //     background: transparent;
+    // }
+    .base-table__body td {
+        padding: 10px !important;
+    }
+    .base-table__body tr td,
+    .parent-trading-header-fast-search-button {
+        color: #9aa5b5;
+    }
+    .parent-dropdown-markets-list-container
+        .base-table
+        tbody
+        .base-table__row--selected
+        td {
+        background: var(--mobile-market-selector-selected-row);
+    }
+    .parent-dropdown-markets-list-container__header-selected,
+    .parent-trading-header-fast-search-button-active,
+    .parent-trading-header-fast-search-button-active,
+    .parent-trading-header-selector-search-field,
+    .parent-dropdown-markets-list-container
+        .base-table
+        tbody
+        .base-table__row--selected
+        td:first-child {
+        color: var(--active-text-color-market-selector);
+    }
+}
+
+.page-ath-form {
+    .forgot-password-link > a,
+    .form-note,
+    .form-note strong {
+        color: var(--link-text-color) !important;
+    }
+}
+
+@media (max-width: 1368px) {
+    .trading-page {
+        flex-direction: column;
+        .left {
+            width: auto;
+            // .trading-chart-parent {
+            //     .base-tab-panel {
+            //     }
+            // }
+            .openorders-parent {
+                .base-table-container {
+                    height: auto;
+                }
+                // .accordion {
+                //     .content.active {
+                //         min-height: 247px;
+                //     }
+                // }
+            }
+        }
+        .right {
+            width: auto;
+            // .obtc-parent {
+            //     min-height: 500px;
+            //     & > div {
+            //     }
+            // }
+        }
+    }
+    .parent-trading-header-selector-search-field {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+// .product-menu-list-element__wrapper:first-child {
+//     .product-menu-list-element__icon {
+//         max-width: 64px !important;
+//     }
+// }
+
+@media screen and (max-width: 768px) {
+    .product-menu__list {
+        .product-menu-list-element__wrapper:first-child {
+            .product-menu-list-element__icon {
+                max-width: 47px !important;
+            }
+        }
+    }
+}
+
+//@import "assets/css/old_index.scss";
+.page-ath-form .base-button {
+    background-color: #0073ff; //#0071c1;
+    // background-image: linear-gradient(85deg, #48c2f6 0%, #1151d9 100%);
+    // border-radius: 100px;
+    border: 0;
+    outline: none;
+    //height: auto;
+    //padding: 15px;
+}
+.intl-tel-input {
+    .country-list {
+        background-color: var(--main-bg);
+        border-color: var(--header-border);
+        .divider {
+            border-color: var(--header-border);
+        }
+    }
+}
+
+.convert-page {
+    background: var(--main-bg);
+    height: calc(100vh - 49px);
+    span {
+        font-weight: normal;
+    }
+    input {
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        &[type="number"] {
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
+    }
+    .btn-wenbit {
+        background-color: #00e6e6;
+        border: none;
+        color: #000;
+    }
+    .title {
+        color: var(--text-bright);
+        width: 460px;
+        h1 {
+            font-size: 60px;
+        }
+        .history {
+            position: absolute;
+            right: -50%;
+            top: 24%;
+        }
+    }
+    .card {
+        border: 1px solid var(--header-border);
+        width: 460px;
+        border-radius: 8px;
+        background-color: transparent;
+        .convert-wrapper {
+            width: 88%;
+            margin: 0 auto;
+            .input-wrapper {
+                border: 1px solid #00e6e6;
+                border-radius: 8px;
+
+                .input-from {
+                    font-size: 32px;
+                    color: #ffffff !important;
+                }
+
+                .input-from::placeholder {
+                    color: #ffffff;
+                }
+            }
+        }
+        label,
+        span {
+            font-weight: 400;
+        }
+        .btn-convert {
+            background: #00e6e6;
+            border: none;
+            color: #000;
+        }
+        .fa-exchange-alt {
+            color: #00e6e6;
+            font-size: 20px;
+            transform: rotate(90deg);
+        }
+        .input-box {
+            // background-color: var(--main-bg);
+            // border: 1px solid var(--input-block-border-color);
+            // border-radius: 8px;
+            .form-control {
+                background-color: transparent !important;
+                border: none !important;
+                width: 100%;
+                color: var(--text-bright);
+                font-size: 20px;
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+            .search {
+                font-size: 1rem;
+                background: var(--input-border) !important;
+            }
+            .max {
+                color: #0071c1;
+                border-right: 1px solid var(--input-block-border-color);
+            }
+            .base-crypto-icon {
+                font-size: 29px;
+            }
+            .dropdown {
+                #convert-dropdown {
+                    background: rgb(0 230 230);
+                    border: none;
+                    color: #000;
+                }
+                .dropdown-toggle {
+                    &::after {
+                        position: absolute;
+                        right: 25%;
+                        top: 50%;
+                    }
+                }
+                .dropdown-menu {
+                    background: var(--parent-background);
+                }
+                .dropdown-item {
+                    color: var(--text-bright);
+                }
+                .dropdown-item:focus,
+                .dropdown-item:hover {
+                    background: var(--main-bg);
+                    color: var(--text-bright);
+                }
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        height: auto;
+        .payment {
+            h2 {
+                font-size: 22px;
+            }
+        }
+        .title {
+            width: auto;
+            h1 {
+                font-size: 42px;
+                margin-bottom: 1.5rem;
+            }
+            .history {
+                right: 0;
+                transform: translateX(0);
+                top: 0;
+                position: relative;
+                margin-bottom: 1.5rem;
+            }
+        }
+        .card {
+            width: 94%;
+            .convert-wrapper {
+                width: 90%;
+            }
+            .input-box {
+                .dropdown {
+                    .dropdown-toggle::after {
+                        right: 10%;
+                    }
+                    #convert-dropdown {
+                        padding-left: 0;
+                        padding-right: 0;
+                        min-width: 117px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.registration-card {
+    .input-item-label {
+        margin-top: 12px;
+    }
+}

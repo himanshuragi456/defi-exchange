@@ -1,0 +1,26 @@
+.mainContainer {
+    overflow-x: auto;
+}
+
+.tableContainer {
+    height: 400px;
+    min-width: 650px;
+}
+
+.table thead th {
+    color: #fff !important;
+    padding-bottom: 10px;
+}
+
+.table thead tr {
+    font-weight: 400;
+}
+
+.tableHead {
+    padding: 8px 0px;
+    border-bottom: 1px solid rgb(190, 190, 190);
+}
+
+td {
+    margin-top: 5px;
+}

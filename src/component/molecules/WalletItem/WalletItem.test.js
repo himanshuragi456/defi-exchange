@@ -1,0 +1,90 @@
+import { mount, shallow } from "enzyme";
+import * as React from "react";
+import { WalletItem } from "./WalletItem";
+
+describe("WalletItem", () => {
+    describe("#render", () => {
+        it("uses styles by default", () => {
+            const wrapper = mount(
+                <WalletItem
+                    address="aevrv"
+                    currency="BTC"
+                    balance={45}
+                    locked={3}
+                    fee={0.3}
+                    type="fiat"
+                    active={false}
+                />
+            );
+            const { className } = wrapper.find("div").first().props();
+            expect(className).toContain("base-wallet-item");
+        });
+        it("displays codes, balances and locked", () => {
+            const wrapper = mount(
+                <WalletItem
+                    address="aevrv"
+                    currency="BTC"
+                    balance={45}
+                    locked={3}
+                    fee={0.3}
+                    type="fiat"
+                    active={false}
+                />
+            );
+            const labelElement = wrapper.find(".base-wallet-item__icon-code");
+            expect(labelElement.text()).toContain("BTC");
+        });
+        it("should not display locked balance if wallet does not have one", () => {
+            const wrapper = shallow(
+                <WalletItem
+                    address="aevrv"
+                    currency="BTC"
+                    balance={45}
+                    fee={0.3}
+                    type="fiat"
+                    active={false}
+                />
+            );
+            const balanceElement = wrapper.find(".base-wallet-item__balance");
+            expect(balanceElement.props().className).not.toContain(
+                "base-wallet-item__balance-locked"
+            );
+        });
+        it("shows currency name", () => {
+            const wrapper = shallow(
+                <WalletItem
+                    address="aevrv"
+                    currency="BTC"
+                    balance={45}
+                    locked={3}
+                    fee={0.3}
+                    type="fiat"
+                    active={true}
+                />
+            );
+            const { className } = wrapper.find("div").first().props();
+            expect(className).toContain("base-wallet-item--active");
+            const { children } = wrapper.props(); // tslint:disable-next-line:no-magic-numbers
+
+            expect(
+                children[1].props.children[3].props.children.props.children[1]
+            ).toEqual(3);
+        });
+        it("should render when locked = 0", () => {
+            const wrapper = shallow(
+                <WalletItem
+                    address="aevrv"
+                    currency="BTC"
+                    locked={0}
+                    fee={0.3}
+                    type="fiat"
+                    active={true}
+                    balance={45}
+                />
+            );
+            const { children } = wrapper.props(); // tslint:disable-next-line:no-magic-numbers
+
+            expect(children[1].props.children[2].charCodeAt(0)).toEqual(160);
+        });
+    });
+});
